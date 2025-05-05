@@ -1,9 +1,15 @@
 # Első óra
-jkgsy jkhyf kjhk yjkh k
 
-### Ezen belül első feladat
-élxgfo kxcjkcv
 
+## 1. feladat
+1. Töltsétek le a .zip-et
+2. Csomagoljátok ki a zip-et
+3. Nyissátok meg a mappát VS Coddal
+4. Nyissatok új terminált
+```bash
+npm install
+npm run dev
+```
 
 
 
