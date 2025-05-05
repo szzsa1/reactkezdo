@@ -10,6 +10,11 @@
 npm install
 npm run dev
 ```
+5. Csak úgy szarozunk
+   ```js
+   functiun Szevasz()
+   console.log("Szevasz")
+   ```
 
 
 
