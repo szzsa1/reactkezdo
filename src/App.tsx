@@ -1,23 +1,35 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import Button from './button'
+
 
 function App() {
   const [count, setCount] = useState(10)
-  function hozzaad(ertek: number){
+  const [step, setStep ] = useState(1);
+  function hozzaad(){
     const cMax = 15;
-    if(count + ertek < 0){
+    if(count + step < 0){
       alert("Negatív nem lehet");
       return;
     }
-    if (count + ertek > cMax)
+    if (count + step > cMax)
     {
       alert("Túl nagy");
       return;
     }
-    setCount((c) => c + ertek) 
+    setCount((c) => c + step) 
   }
+
+  useEffect(() => {
+    if (step != 1){
+      setTimeout(()=> {
+        setStep(1);
+      },5000);
+    }
+  },[step])
+
 
   return (
     <>
@@ -30,15 +42,16 @@ function App() {
         </a>
       </div>
       <h1>Vite + React</h1>
+      <input type="number" value={step} onChange={e=>setStep(parseInt(e.target.value))}/>
       <div className="card">
         <p>Ennyiszer kattintottál: {count}</p>
-        <button onClick={() => hozzaad(2)}>
+        <Button onClick={() => hozzaad()}>
           Plusz 1
-        </button>
+        </Button>
 
-        <button onClick={() => hozzaad(-2)}>
+        <Button onClick={() => hozzaad()}>
           Minusz 1
-        </button>
+        </Button>
 
       </div>
       <p className="read-the-docs">
